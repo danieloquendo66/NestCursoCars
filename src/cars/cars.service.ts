@@ -7,26 +7,11 @@ import { UpdateteCarDto } from './dto/update-car.dto';
 @Injectable()
 export class CarsService {
   private cars: Car[] = [
-    {
-      id: uuid(),
-      brand: 'Toyota',
-      model: 'Corolla',
-    },
-    {
-      id: uuid(),
-      brand: 'Audi',
-      model: 'A4',
-    },
-    {
-      id: uuid(),
-      brand: 'BMW',
-      model: 'X5',
-    },
-    {
-      id: uuid(),
-      brand: 'Honda',
-      model: 'Civic',
-    },
+    // {
+    //   id: uuid(),
+    //   brand: 'Toyota',
+    //   model: 'Corolla',
+    // },
   ];
 
   findAllCars(): Car[] {
@@ -68,5 +53,9 @@ export class CarsService {
     const index = this.cars.indexOf(car);
     console.log({ index, car });
     this.cars.splice(index, 1);
+  }
+
+  fillCarsWithSeedData(cars: Car[]): void {
+    this.cars = cars;
   }
 }
